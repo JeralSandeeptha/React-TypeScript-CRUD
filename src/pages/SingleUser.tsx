@@ -1,19 +1,55 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/SingleUser/SingleUser.css';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
+
+interface Contact{
+  _id: number,
+  name: string,
+  subscription: string,
+  image: string
+}
 
 const SingleUser = () => {
+
+  const [user, setUser] = useState<Contact>();
+
+  const params = useParams();
+
+  const { id } = params;
+
+  const fetchContact = async () => {
+    try {
+        const res = await axios.get(`http://localhost:8000/api/contacts/${id}`);
+        console.log(res.data);
+        setUser(res.data);
+    } catch (error) {
+        console.log(error);
+    }
+  }
+
+  useEffect( () => {
+    fetchContact();
+  }, [])
+
   return (
     <div className='single-outer'>
       <div className="single-inner">
-        <li className="box flex gap-x-6 py-5">
-            <div className="data flex min-w-0 gap-x-4">
-                <img className="h-12 w-12 flex-none rounded-full bg-gray-50" src='https://media.istockphoto.com/id/1214292694/photo/beautiful-transsexual-transgender-woman-wearing-t-shirt-over-isolated-red-background-looking.jpg?s=612x612&w=0&k=20&c=P5vkwzWHhxDDppy3elLXJrDXVdic_A1_HxxlxYEKhiA=' alt="user-img" />
-                <div className="min-w-0 flex-auto">
-                    <p className="name text-sm font-semibold leading-6 text-gray-900">Jeral Sandeeptha</p>
-                    <p className="mt-1 truncate text-xs leading-5 text-gray-300">3 Months</p>
+        {
+          user ? (
+            <li className="box flex gap-x-6 py-5">
+                <div className="data flex min-w-0 gap-x-4">
+                    <img className="h-12 w-12 flex-none rounded-full bg-gray-50" src={user!.image} alt="user-img" />
+                    <div className="min-w-0 flex-auto">
+                        <p className="name text-sm font-semibold leading-6 text-gray-900">{ user!.name }</p>
+                        <p className="mt-1 truncate text-xs leading-5 text-gray-300">{ user!.subscription } Months</p>
+                    </div>
                 </div>
-            </div>
-        </li>
+            </li>
+          ) : (
+            <h1>Please wait...</h1>
+          )
+        }
       </div>
     </div>
   )
