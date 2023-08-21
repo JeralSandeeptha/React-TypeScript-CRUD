@@ -1,0 +1,38 @@
+.single-outer {
+    width: 100%;
+    min-height: calc(100vh - 19.3vh);
+    background-color: white;
+    overflow-y: scroll;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .single-inner {
+        margin: 0 auto;
+        max-width: 500px;
+        min-width: 500px;
+        max-height: calc(100vh - 23vh);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 500px;
+
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-bottom: 10px;
+            border-radius: 0.25rem;
+            min-width: 100%;
+            background-color: #1F2937;
+
+            .data {
+
+                .name {
+                    color: white;
+                }
+            }
+        }
+    }
+}

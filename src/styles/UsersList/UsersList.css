@@ -1,0 +1,38 @@
+.user-list-outer {
+  width: 100%;
+  min-height: 80.7vh;
+  background-color: white;
+  overflow-y: scroll;
+  padding-top: 20px;
+}
+.user-list-outer .user-list-inner {
+  margin: 0 auto;
+  max-width: 500px;
+  max-height: 77vh;
+}
+.user-list-outer .user-list-inner .box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  border-radius: 0.25rem;
+  background-color: #1F2937;
+}
+.user-list-outer .user-list-inner .box .data .name {
+  color: white;
+}
+.user-list-outer .user-list-inner .box .operations {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.user-list-outer .user-list-inner .box .operations button {
+  padding: 6px 12px;
+  border-radius: 0.25rem;
+}
+.user-list-outer .user-list-inner .box .operations .update-btn {
+  background-color: #48576d;
+}
+.user-list-outer .user-list-inner .box .operations .delete-btn {
+  background-color: #818d9e;
+}/*# sourceMappingURL=UsersList.css.map */

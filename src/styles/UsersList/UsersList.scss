@@ -1,0 +1,48 @@
+.user-list-outer {
+    width: 100%;
+    min-height: calc(100vh - 19.3vh);
+    background-color: white;
+    overflow-y: scroll;
+    padding-top: 20px;
+
+    .user-list-inner {
+        margin: 0 auto;
+        max-width: 500px;
+        max-height: calc(100vh - 23vh);
+    
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-bottom: 10px;
+            border-radius: 0.25rem;
+            background-color: #1F2937;
+
+            .data {
+
+                .name {
+                    color: white;
+                }
+            }
+
+            .operations {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                button {
+                    padding: 6px 12px;
+                    border-radius: 0.25rem;
+                }
+
+                .update-btn{
+                    background-color: #48576d;
+                }
+
+                .delete-btn {
+                    background-color: #818d9e;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+.single-outer {
+  width: 100%;
+  min-height: 80.7vh;
+  background-color: white;
+  overflow-y: scroll;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.single-outer .single-inner {
+  margin: 0 auto;
+  max-width: 500px;
+  min-width: 500px;
+  max-height: 77vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+}
+.single-outer .single-inner .box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  border-radius: 0.25rem;
+  min-width: 100%;
+  background-color: #1F2937;
+}
+.single-outer .single-inner .box .data .name {
+  color: white;
+}/*# sourceMappingURL=SingleUser.css.map */
